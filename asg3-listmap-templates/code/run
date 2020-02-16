@@ -2,7 +2,7 @@
 
 cd ../..
 git pull
-cd asg2-shell-fnptrs-oop/code
+cd asg3-listmap-templates/code
 make
-valgrind yshell
+valgrind keyvalue
 
