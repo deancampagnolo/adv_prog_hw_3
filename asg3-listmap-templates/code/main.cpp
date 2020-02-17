@@ -33,12 +33,30 @@ void scan_options (int argc, char** argv) {
 }
 
 
-string get_command(string argument) {
-   if (argument.at(0) == 'h') {
-      return "comment";
+void get_command(string argument) {
+   if (argument.find("=") == std::string::npos) {
+      cout << "print key and value pair" << endl;
+      return;
+   }
+   if (argument.at(0) == '=') {
+      if (argument.length == 1) {
+         cout << "print all key and value pairs lexographically"<<endl;
+         return;
+      }else {
+         cout << "print key and value pairs with given value"<<endl;
+         return;
+      }
+   }
+   if (argument.find("=") == argument.length -1) {
+      cout << "delete key and value pair that matches key"<<endl;
+      return;
+   } else {
+      cout << "insert/replace key value pair"<<endl;
+      return;
    }
 
-   return argument;
+
+   return "This is an error"; //FIXME(me) throw actual error
 }
 
 int main (int argc, char** argv) {
@@ -48,7 +66,7 @@ int main (int argc, char** argv) {
    str_str_map test;
    for (char** argp = &argv[optind]; argp != &argv[argc]; ++argp) {
 
-      cout << get_command(*argp) <<endl;
+      get_command(*argp);
       str_str_pair pair (*argp, to_string<int> (argp - argv));
       cout << "Before insert: " << pair << endl;
       test.insert (pair);
