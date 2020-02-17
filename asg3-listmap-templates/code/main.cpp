@@ -32,6 +32,12 @@ void scan_options (int argc, char** argv) {
    }
 }
 
+
+string get_command(char** argp) {
+   cout << *argp <<endl;
+   return *argp;
+}
+
 int main (int argc, char** argv) {
    sys_info::execname (argv[0]);
    scan_options (argc, argv);
@@ -58,7 +64,3 @@ int main (int argc, char** argv) {
    return EXIT_SUCCESS;
 }
 
-string get_command(char** argp) {
-   cout << *argp <<endl;
-   return *argp;
-}
