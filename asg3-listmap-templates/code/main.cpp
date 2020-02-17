@@ -38,7 +38,7 @@ int main (int argc, char** argv) {
 
    str_str_map test;
    for (char** argp = &argv[optind]; argp != &argv[argc]; ++argp) {
-      cout << "*argp:" << *argp << " to_string<int>:" << to_string<int> (argp - argv) << endl;
+      cout << "*argp:" << argp << " to_string<int>:" << to_string<int> (argp - argv) << endl;
       str_str_pair pair (*argp, to_string<int> (argp - argv));
       cout << "Before insert: " << pair << endl;
       test.insert (pair);
