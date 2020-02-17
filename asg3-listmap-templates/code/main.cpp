@@ -44,7 +44,8 @@ int main (int argc, char** argv) {
 
    str_str_map test;
    for (char** argp = &argv[optind]; argp != &argv[argc]; ++argp) {
-      get_command(argp);
+
+      cout << get_command(argp) <<endl;
       str_str_pair pair (*argp, to_string<int> (argp - argv));
       cout << "Before insert: " << pair << endl;
       test.insert (pair);
