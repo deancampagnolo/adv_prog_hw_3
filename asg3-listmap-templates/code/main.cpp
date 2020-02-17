@@ -33,8 +33,11 @@ void scan_options (int argc, char** argv) {
 }
 
 
-string get_command(char** argp) {
-   string argument = *argp;
+string get_command(string argument) {
+   if (argument.at(0) == '#') {
+      return "comment";
+   }
+
    return argument;
 }
 
@@ -45,7 +48,7 @@ int main (int argc, char** argv) {
    str_str_map test;
    for (char** argp = &argv[optind]; argp != &argv[argc]; ++argp) {
 
-      cout << get_command(argp) <<endl;
+      cout << get_command(*argp) <<endl;
       str_str_pair pair (*argp, to_string<int> (argp - argv));
       cout << "Before insert: " << pair << endl;
       test.insert (pair);
