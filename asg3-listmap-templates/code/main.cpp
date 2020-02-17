@@ -39,7 +39,7 @@ void get_command(string argument) {
       return;
    }
    if (argument.at(0) == '=') {
-      if (argument.length == 1) {
+      if (argument.length() == 1) {
          cout << "print all key and value pairs lexographically"<<endl;
          return;
       }else {
@@ -47,7 +47,7 @@ void get_command(string argument) {
          return;
       }
    }
-   if (argument.find("=") == argument.length -1) {
+   if (argument.find("=") == argument.length() -1) {
       cout << "delete key and value pair that matches key"<<endl;
       return;
    } else {
