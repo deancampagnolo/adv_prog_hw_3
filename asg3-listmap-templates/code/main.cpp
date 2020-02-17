@@ -54,9 +54,6 @@ void get_command(string argument) {
       cout << "insert/replace key value pair"<<endl;
       return;
    }
-
-
-   return "This is an error"; //FIXME(me) throw actual error
 }
 
 int main (int argc, char** argv) {
