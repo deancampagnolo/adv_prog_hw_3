@@ -34,8 +34,8 @@ void scan_options (int argc, char** argv) {
 
 
 string get_command(char** argp) {
-   cout << *argp <<endl;
-   return *argp;
+   string argument = *argp;
+   return argument;
 }
 
 int main (int argc, char** argv) {
