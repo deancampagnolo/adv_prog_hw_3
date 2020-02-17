@@ -34,8 +34,8 @@ void scan_options (int argc, char** argv) {
 
 
 string get_command(string argument) {
-   if (argument.at(0) == '#') {
-      return argument;
+   if (argument.at(0) == 'h') {
+      return "comment";
    }
 
    return argument;
