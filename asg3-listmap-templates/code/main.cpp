@@ -33,7 +33,8 @@ void scan_options (int argc, char** argv) {
 }
 
 
-void get_command(string argument) {
+void do_command(string argument, str_str_map* the_map,
+   str_str_pair* the_pair) {
    if (argument.find("=") == std::string::npos) {
       cout << "print key and value pair" << endl;
       return;
@@ -52,6 +53,7 @@ void get_command(string argument) {
       return;
    } else {
       cout << "insert/replace key value pair"<<endl;
+      the_map->insert(*the_pair);
       return;
    }
 }
@@ -62,9 +64,8 @@ int main (int argc, char** argv) {
 
    str_str_map test;
    for (char** argp = &argv[optind]; argp != &argv[argc]; ++argp) {
-
-      get_command(*argp);
       str_str_pair pair (*argp, to_string<int> (argp - argv));
+      do_command(*argp, &test, &pair);//Fixme(me) not right pair
       cout << "Before insert: " << pair << endl;
       test.insert (pair);
    }
