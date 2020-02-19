@@ -86,7 +86,7 @@ int main (int argc, char** argv) {
 
       }
    } else {
-      int count = 0;
+      int count = 1;
       while(getline(cin, current_line)){
          cout << count<<": "<<current_line << endl;
          do_command(current_line, &test);
