@@ -82,19 +82,18 @@ int main (int argc, char** argv) {
          }
 
       }
+   } else {
+      for (char** argp = &argv[optind]; argp != &argv[argc]; ++argp) {
+         do_command(*argp, &test);
+      }
    }
 
-   return -1;
 
    sys_info::execname (argv[0]);
    scan_options (argc, argv);
 
    //str_str_map test;
-   for (char** argp = &argv[optind]; argp != &argv[argc]; ++argp) {
-      str_str_pair pair (*argp, to_string<int> (argp - argv));
-      cout << "Before insert: " << pair << endl;
-      //test.insert (pair);
-   }
+   
 
    cout << test.empty() << endl;
    for (str_str_map::iterator itor = test.begin();
