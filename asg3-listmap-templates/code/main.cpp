@@ -87,7 +87,7 @@ int main (int argc, char** argv) {
       while(getline(cin, current_line)){
          cout << current_line << endl;
          do_command(current_line, &test);
-         cout << "hmm"<<endl;
+         //cout << "hmm"<<endl;
       }
    }
 
