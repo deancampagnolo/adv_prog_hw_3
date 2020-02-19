@@ -53,8 +53,8 @@ void do_command(string argument, str_str_map* the_map) {
       cout << "delete key and value pair that matches key"<<endl;
       return;
    } else {
-      cout << "insert/replace key value pair"<<endl;
       str_str_pair the_pair("a", "bj");
+      cout << "insert/replace key value pair"<<the_pair<<endl;
       the_map->insert(the_pair);
       return;
    }
