@@ -46,6 +46,7 @@ void do_command(string argument, str_str_map* the_map) {
          return;
       }else {
          cout << "print key and value pairs with given value"<<endl;
+         cout << argument.substr(1)<<endl;
          return;
       }
    }
