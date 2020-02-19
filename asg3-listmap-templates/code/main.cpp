@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <exception>
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <unistd.h>
 
@@ -20,11 +21,8 @@ void scan_options (int argc, char** argv) {
    for (;;) {
       int option = getopt (argc, argv, "@:");
       if (option == EOF) break;
-      cout<<option<<endl;
-      cout<<'@'<<endl;
       switch (option) {
          case '@':
-            cout<<"at"<<endl;
             debugflags::setflags (optarg);
             break;
          default:
@@ -62,6 +60,23 @@ void do_command(string argument, str_str_map* the_map,
 }
 
 int main (int argc, char** argv) {
+   fstream the_file;
+
+   if (argc > 1) {
+      for (int item = 1; item <argc; item ++) {
+         the_file.open(argv[item]);
+         if (the_file.is_open()) {
+            string current_line;
+            while(getline(the_file, current_line)){
+               cout <<current_line<<endl;
+            }
+         }
+
+      }
+   }
+
+   return -1;
+
    sys_info::execname (argv[0]);
    scan_options (argc, argv);
 
