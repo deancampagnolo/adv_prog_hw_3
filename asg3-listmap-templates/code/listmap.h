@@ -13,8 +13,6 @@ class listmap {
       using mapped_type = mapped_t;
       using value_type = xpair<const key_type, mapped_type>;
    private:
-      node* previous_node;
-      node* next_node;
       less_t less;
       struct node;
       struct link {
