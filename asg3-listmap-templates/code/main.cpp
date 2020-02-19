@@ -69,7 +69,7 @@ int main (int argc, char** argv) {
    str_str_map test;
 
    string current_line;
-
+   cerr<<"ahhh"<<endl;
    //complain()<<"oh no!"<<endl;
    if (argc > 1) {
       for (int item = 1; item <argc; item ++) {
@@ -110,6 +110,8 @@ int main (int argc, char** argv) {
    test.erase (itor);
 
    cout << "EXIT_SUCCESS" << endl;
+
+   sys_info::exit_status_;
    return EXIT_SUCCESS;
 }
 
