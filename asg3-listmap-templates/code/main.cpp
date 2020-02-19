@@ -52,10 +52,12 @@ void do_command(string argument, str_str_map* the_map) {
    }
    if (argument.find("=") == argument.length() -1) {
       cout << "delete key and value pair that matches key"<<endl;
+      cout << argument.substr(0,argument.length()-1);
       return;
    } else {
       str_str_pair the_pair("a", "bj");
       cout << "insert/replace key value pair"<<the_pair<<endl;
+      cout << argument.find("=")<<endl;
       the_map->insert(the_pair);
       return;
    }
