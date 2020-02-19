@@ -74,6 +74,7 @@ int main (int argc, char** argv) {
                cout <<current_line<<endl;
                do_command(current_line, &test);
             }
+            the_file.close();
          }
 
       }
