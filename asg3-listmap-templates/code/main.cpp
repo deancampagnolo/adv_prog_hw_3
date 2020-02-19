@@ -34,8 +34,7 @@ void scan_options (int argc, char** argv) {
 }
 
 
-void do_command(string argument, str_str_map* the_map,
-   str_str_pair* the_pair) {
+void do_command(string argument, str_str_map* the_map) {
    if (argument.find("=") == std::string::npos) {
       cout << "print key and value pair" << endl;
       return;
@@ -54,13 +53,17 @@ void do_command(string argument, str_str_map* the_map,
       return;
    } else {
       cout << "insert/replace key value pair"<<endl;
-      the_map->insert(*the_pair);
+      str_str_pair the_pair("a", "bj");
+      the_map->insert(the_pair);
       return;
    }
 }
 
 int main (int argc, char** argv) {
    fstream the_file;
+
+   str_str_map test;
+
 
    if (argc > 1) {
       for (int item = 1; item <argc; item ++) {
@@ -69,6 +72,7 @@ int main (int argc, char** argv) {
             string current_line;
             while(getline(the_file, current_line)){
                cout <<current_line<<endl;
+               do_command(current_line, &test);
             }
          }
 
@@ -80,10 +84,9 @@ int main (int argc, char** argv) {
    sys_info::execname (argv[0]);
    scan_options (argc, argv);
 
-   str_str_map test;
+   //str_str_map test;
    for (char** argp = &argv[optind]; argp != &argv[argc]; ++argp) {
       str_str_pair pair (*argp, to_string<int> (argp - argv));
-      do_command(*argp, &test, &pair);//Fixme(me) not right pair
       cout << "Before insert: " << pair << endl;
       //test.insert (pair);
    }
