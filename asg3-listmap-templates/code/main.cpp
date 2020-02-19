@@ -74,18 +74,20 @@ int main (int argc, char** argv) {
       for (int item = 1; item <argc; item ++) {
          the_file.open(argv[item]);
          if (the_file.is_open()) {
-            
+            int count = 0;
             while(getline(the_file, current_line)){
-               cout <<current_line<<endl;
+               cout << argv[item] <<": " << count<<": " <<current_line<<endl;
                do_command(current_line, &test);
+               count++;
             }
             the_file.close();
          }
 
       }
    } else {
+      int count = 0;
       while(getline(cin, current_line)){
-         cout << current_line << endl;
+         cout << count<<": "<<current_line << endl;
          do_command(current_line, &test);
          //cout << "hmm"<<endl;
       }
