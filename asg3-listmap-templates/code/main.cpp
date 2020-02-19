@@ -35,6 +35,7 @@ void scan_options (int argc, char** argv) {
 
 
 void do_command(string argument, str_str_map* the_map) {
+   cout << "\t";
    if (argument.find("=") == std::string::npos) {
       cout << "print key and value pair" << endl;
       return;
