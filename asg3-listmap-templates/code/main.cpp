@@ -76,7 +76,8 @@ int main (int argc, char** argv) {
          if (the_file.is_open()) {
             int count = 0;
             while(getline(the_file, current_line)){
-               cout << argv[item] <<": " << count<<": " <<current_line<<endl;
+               cout << argv[item] <<": " << count<<": " <<current_line
+                  <<endl;
                do_command(current_line, &test);
                count++;
             }
