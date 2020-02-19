@@ -15,6 +15,7 @@
 template <typename key_t, typename mapped_t, class less_t>
 listmap<key_t,mapped_t,less_t>::~listmap() {
    DEBUGF ('l', reinterpret_cast<const void*> (this));
+
 }
 
 //
@@ -25,6 +26,9 @@ typename listmap<key_t,mapped_t,less_t>::iterator
 listmap<key_t,mapped_t,less_t>::insert (const value_type& pair) {
    DEBUGF ('l', &pair << "->" << pair);
    cout<<"owo we here inserting xd"<<endl;
+   previous_node = new node(nullptr,nullptr,pair);
+
+   
    return iterator();
 }
 

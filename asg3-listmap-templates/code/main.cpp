@@ -22,6 +22,7 @@ void scan_options (int argc, char** argv) {
       if (option == EOF) break;
       switch (option) {
          case '@':
+            cout<<"at"<<endl;
             debugflags::setflags (optarg);
             break;
          default:
