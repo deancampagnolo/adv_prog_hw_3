@@ -74,7 +74,7 @@ int main (int argc, char** argv) {
       for (int item = 1; item <argc; item ++) {
          the_file.open(argv[item]);
          if (the_file.is_open()) {
-            int count = 0;
+            int count = 1;
             while(getline(the_file, current_line)){
                cout << argv[item] <<": " << count<<": " <<current_line
                   <<endl;
