@@ -112,6 +112,6 @@ int main (int argc, char** argv) {
    cout << "EXIT_SUCCESS" << endl;
 
    sys_info::exit_status_;
-   return EXIT_SUCCESS;
+   return sys_info::exit_status_;
 }
 
