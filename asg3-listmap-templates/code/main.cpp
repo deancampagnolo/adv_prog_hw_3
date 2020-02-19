@@ -20,6 +20,7 @@ void scan_options (int argc, char** argv) {
    for (;;) {
       int option = getopt (argc, argv, "@:");
       if (option == EOF) break;
+      cout<<"at"<<endl;
       switch (option) {
          case '@':
             cout<<"at"<<endl;
