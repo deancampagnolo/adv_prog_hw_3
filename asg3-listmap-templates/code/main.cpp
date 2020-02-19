@@ -86,17 +86,15 @@ int main (int argc, char** argv) {
    } else {
       while(getline(cin, current_line)){
          cout << current_line << endl;
+         do_command(current_line, &test);
+         cout << "hmm"<<endl;
       }
    }
 
    cout <<"is it even possible to get here"<<endl;
 
-
    sys_info::execname (argv[0]);
    scan_options (argc, argv);
-
-   //str_str_map test;
-   
 
    cout << test.empty() << endl;
    for (str_str_map::iterator itor = test.begin();
