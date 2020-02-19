@@ -70,6 +70,7 @@ int main (int argc, char** argv) {
 
    string current_line;
 
+   cerr<<"oh no!"<<endl;
    if (argc > 1) {
       for (int item = 1; item <argc; item ++) {
          the_file.open(argv[item]);
