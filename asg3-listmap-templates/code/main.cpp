@@ -67,7 +67,7 @@ int main (int argc, char** argv) {
       str_str_pair pair (*argp, to_string<int> (argp - argv));
       do_command(*argp, &test, &pair);//Fixme(me) not right pair
       cout << "Before insert: " << pair << endl;
-      test.insert (pair);
+      //test.insert (pair);
    }
 
    cout << test.empty() << endl;
