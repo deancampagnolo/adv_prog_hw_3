@@ -68,12 +68,13 @@ int main (int argc, char** argv) {
 
    str_str_map test;
 
+   string current_line;
 
    if (argc > 1) {
       for (int item = 1; item <argc; item ++) {
          the_file.open(argv[item]);
          if (the_file.is_open()) {
-            string current_line;
+            
             while(getline(the_file, current_line)){
                cout <<current_line<<endl;
                do_command(current_line, &test);
@@ -83,10 +84,12 @@ int main (int argc, char** argv) {
 
       }
    } else {
-      for (char** argp = &argv[optind]; argp != &argv[argc]; ++argp) {
-         do_command(*argp, &test);
+      while(getline(cin, current_line)){
+         cout << current_line << endl;
       }
    }
+
+   cout <<"is it even possible to get here"<<endl;
 
 
    sys_info::execname (argv[0]);
