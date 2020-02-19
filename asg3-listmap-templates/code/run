@@ -4,5 +4,5 @@ cd ../..
 git pull
 cd asg3-listmap-templates/code
 make
-valgrind keyvalue
+valgrind keyvalue - test1.in - test2.in - test3.in
 
