@@ -55,9 +55,9 @@ void do_command(string argument, str_str_map* the_map) {
       cout << argument.substr(0,argument.length()-1);
       return;
    } else {
-      str_str_pair the_pair("a", "bj");
+      str_str_pair the_pair(argument.substr(0,argument.find("=")),
+         argument.substr(argument.find("=")+1));
       cout << "insert/replace key value pair"<<the_pair<<endl;
-      cout << argument.find("=")<<endl;
       the_map->insert(the_pair);
       return;
    }
